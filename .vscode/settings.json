@@ -1,0 +1,9 @@
+{
+    "workbench.commandPalette.history": 250,
+    "workbench.tree.indent": 15,
+    "workbench.preferredHighContrastColorTheme": "Visual Studio Dark",
+    "workbench.iconTheme": "material-icon-theme",
+    "workbench.statusBar.visible": false,
+    "workbench.tree.renderIndentGuides": "always",
+    "workbench.view.alwaysShowHeaderActions": true
+}

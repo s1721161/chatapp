@@ -1,0 +1,29 @@
+<h3>個人チャット<h3>
+
+<h4>参加者</h4>
+<% @entries.each do |e| %>
+  <h5><img src=<%=e.user.image%> class="img-circle" id="profile_pic"><a href="/users/<%= e.user.id %>"><%= e.user.name%></a></h5>
+<% end %>
+
+<hr>
+<div class="message_item" id="mes">
+<% if @messages.present? %>
+  <% @messages.each do |m| %>
+   <div class="messages" data-id=<%=m.id%>> <img src=<%=m.user.image%> class="img-circle" id="profile_pic"><a href="/users/<%= m.user_id %>"><%= m.user.name %></a> ： <%=m.content%> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <small><%=m.created_at%></small></div>
+    <hr>
+  <% end %>
+<% else %>  
+<% end %>
+</div>
+<%= form_for @message do |f| %>
+  <%= f.text_field :content, :placeholder => "メッセージを入力して下さい" , :size => 70 %>
+  <%= f.hidden_field :room_id, :value => @room.id %>
+  <%= f.hidden_field :image, :value => current_user.image%>
+  <%= f.hidden_field :name, :value => current_user.name%>
+  <br>
+  <%= f.submit "投稿する" %>
+<% end %>
+
+
+
+<%= link_to "ユーザー一覧に戻る", users_path %>

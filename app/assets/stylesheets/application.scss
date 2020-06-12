@@ -1,0 +1,108 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+div.profile img {
+    width: 80px;
+    height: 80px;
+}
+
+div#tab01 img{
+    width: 80px;
+    height: 80px;
+}
+
+.tabnav {
+    margin: 0;
+    padding: 0;
+}
+
+.tabnav li {
+    display: inline;
+}
+
+.tabnav li a {
+    display: inline-block;
+    background: #405dca;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px 5px 0 0;
+    text-decoration: none;
+}
+
+.tabnav li a:hover,
+.tabnav li a.active {
+    background: #ddd;
+    color: #333;
+}
+
+.tabcontent {
+    padding: 20px;
+    border: 1px dotted #ccc;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+main {
+    display: flex;
+}
+
+#profile_pic{
+    height: 50px;
+    width: 50px;
+}
+
+.container {
+    display: flex;
+    align-items: flex-start;
+    align-content: center;
+    padding: 10px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+
+.allchat_item{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 1.5em 0 1.5em 10px;
+    padding: 7px 10px;
+    min-width: 100px;
+    max-width: 100%;
+    color: #555;
+    font-size: 16px;
+    background: #e0edff;
+}
+
+#container{
+
+}
+
+.tab{
+    text-align: center;
+}
+
+.allchat{
+
+}
+
+body{
+background: #ADA996;
+/* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #EAEAEA, #DBDBDB, #F2F2F2, #ADA996);
+/* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #EAEAEA, #DBDBDB, #F2F2F2, #ADA996);
+/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+.messages{
+    margin: 1.5em 0 1.5em 10px;
+    padding: 7px 10px;
+    min-width: 100px;
+    max-width: 100%;
+    color: #555;
+    font-size: 16px;
+    background: #e0edff;
+}

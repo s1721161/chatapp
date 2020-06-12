@@ -1,0 +1,52 @@
+<% if user_signed_in? %>
+<%= link_to "ログアウト", destroy_user_session_path, method: :delete %> 
+<div class="tab">
+<ul class ="tabnav">
+<li><a href="#tab01">ログイン中のユーザー</a></li>
+<li><a href="#tab02">全体チャット</a></li>
+<li><a href="#tab03">プロフィール</a></li>
+</div>
+</ul>
+<main>
+<div class="tabcontent">
+  <div id="tab01" class="container"> 
+   <%@users=User.where(online: true)%> 
+   <%@users.each do |user|%>
+   <div class="item" data-id=<%=user.id%>>   
+      <a href="/users/<%= user.id %>"><%= user.name %></a>
+      <img src=<%=user.image.to_s%> class="img-thumbnail">
+   </div> 
+   <%end%>
+  </div>
+<div id="tab02" class="allchat">
+
+    <%= form_for Allchat.new do |f|%>
+      <%= f.text_field :content, :placeholder => "メッセージを入力して下さい" , :size => 70 %>
+      <%= f.hidden_field :user_id, :value => current_user.id %>
+      <%= f.hidden_field :image, :value => current_user.image%>
+      <%= f.hidden_field :name, :value => current_user.name%>
+      <br>
+      <%= f.submit "投稿する", class: "form_allchats" %>
+    <%end%>
+
+  <div class="allchats" id="container">
+
+  
+    </div>
+</div>
+
+<div id="tab03">
+  <div class="profile">
+    <img src=<%= current_user.image%> class="img-circle">
+    <h4> メールアドレス： <%= current_user.email %> </h4>
+    <h4>名前 : <%=current_user.name%></h4> <br>
+  </div>
+</div>
+</div>
+</main>
+
+<%else%>
+  <h1>現在ログインしていません</h1>
+  <%= link_to "ログイン", new_user_session_path, class: 'post' %>
+  <%= link_to "新規登録", new_user_registration_path, class: 'post' %> 
+<% end %>
