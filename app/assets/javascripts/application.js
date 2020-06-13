@@ -65,8 +65,6 @@ $(function () {
       }
     }
 });
-var count = 0;
-var len = $('.allchats div').filter(':visible');
 
 
 
@@ -84,7 +82,6 @@ var called = false;
 
 $(function () {
       setInterval(update_allchat, 5000);
-      //10000ミリ秒ごとにupdateという関数を実行する
 });
 
 function update_allchat() {
@@ -117,7 +114,7 @@ function update_allchat() {
 function chatcontrolle(){
     console.log($('.allchat_item').length)
     if ($('.allchat_item').length > 10) {
-        $('.allchats div:last').fadeOut(1000, function(){
+        $('.allchats div:last').fadeOut(2000, function(){
         $('.allchats div:last').remove();
         });
     }
