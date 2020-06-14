@@ -81,7 +81,7 @@ var called = false;
 
 
 $(function () {
-      setInterval(update_allchat, 5000);
+      setInterval(update_allchat, 8000);
 });
 
 function update_allchat() {
